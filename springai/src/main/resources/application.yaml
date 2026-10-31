@@ -1,0 +1,24 @@
+spring:
+  ai:
+    openai:
+      base-url: https://g7e6ai.com
+      api-key: ${DEEPSEEK_API_KEY:sk-e00e29b97461b8ca221026600d993fca4b7850d8f6e5ff38d016d788f1265b38}
+      chat:
+        model: ${DEEPSEEK_MODEL:gpt-5.6-sol}
+    deepseek:
+      api-key: sk-cd973eb09fd44073b80b25c69765a397
+      chat:
+        model: deepseek-chat
+  servlet:
+    encoding:
+      charset: UTF-8
+      force-response: true
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG
