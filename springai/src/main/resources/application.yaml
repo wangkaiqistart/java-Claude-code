@@ -9,6 +9,14 @@ spring:
       api-key: sk-cd973eb09fd44073b80b25c69765a397
       chat:
         model: deepseek-chat
+    # 第五课：工具调用配置（作用于所有使用自动配置 ToolCallingAdvisor 的 ChatClient）
+    tools:
+      # false（默认）：工具抛异常时，把异常信息发回给模型；true：直接抛给调用方
+      throw-exception-on-error: false
+      limits:
+        # 单个工具在一轮对话里最多被调用几次，key 是工具名（方法名，区分大小写）
+        max-calls-per-tool:
+          getShipmentTrace: 2
   servlet:
     encoding:
       charset: UTF-8
